@@ -26,3 +26,4 @@ jobs:
       with:
         PROJECT_FILE_PATH: Repositorio.Core/Repositorio.Core.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+        VERSION_FILE_PATH: Repositorio.Core/Directory.Build.Props
