@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Repositorio.Core.Behavior;
 
-namespace Repositorio.Infrastructure
+namespace Repositorio.ApplicationServices
 {
     /// <summary>
     /// Extend this class to add business logic
