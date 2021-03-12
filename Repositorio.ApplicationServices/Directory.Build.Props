@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Authors>Brian Meek</Authors>
     <PackageTags>repository;appServices;architecture;entityframework</PackageTags>
-    
+    <PackageId>Repositorio.ApplicationServices</PackageId>
     <PackageProjectUrl>https://github.com/bwdev/Repositorio</PackageProjectUrl>
     <RepositoryUrl>https://github.com/bwdev/Repositorio</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
