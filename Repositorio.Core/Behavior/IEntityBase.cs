@@ -1,10 +1,8 @@
 ﻿using System;
 namespace Repositorio.Core.Behavior
 {
-    public interface IEntityBase<T>
+    public interface IEntityBase
     {
-        T Id { get; }
-
         DateTime CreatedDate { get; }
         DateTime UpdatedDate { get; }
 
