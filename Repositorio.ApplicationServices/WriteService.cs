@@ -7,9 +7,9 @@ namespace Repositorio.ApplicationServices
     /// Extend this class to add business logic
     /// </summary>
     /// <typeparam name="T">Describes an Entity</typeparam>
-    public abstract class BusinessWriteService<T> : IWrite<T> where T : class
+    public abstract class WriteService<T> : IWrite<T> where T : class
     {
-        protected BusinessWriteService(IWrite<T> repository)
+        protected WriteService(IWrite<T> repository)
         {
             Repository = repository;
         }

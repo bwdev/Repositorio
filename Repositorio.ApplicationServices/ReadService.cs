@@ -9,11 +9,11 @@ namespace Repositorio.ApplicationServices
     /// </summary>
     /// <typeparam name="T">Describes an Entity</typeparam>
     /// <typeparam name="TE">Describes the type of the Id field for the Entity</typeparam>
-    public abstract class BusinessReadService<T, TE> : IRead<T, TE> where T : class
+    public abstract class ReadService<T, TE> : IRead<T, TE> where T : class
     {
         protected readonly IRead<T, TE> repository;
 
-        protected BusinessReadService(IRead<T, TE> repository)
+        protected ReadService(IRead<T, TE> repository)
         {
             this.repository = repository;
         }
