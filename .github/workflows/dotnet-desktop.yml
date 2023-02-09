@@ -23,8 +23,15 @@ jobs:
       run: dotnet build --no-restore --configuration Release
       
     - name: Publish Repositorio
-      uses: brandedoutcast/publish-nuget@v2.5.2
-      with:
-        PROJECT_FILE_PATH: Repositorio/Repositorio.csproj
-        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-        VERSION_FILE_PATH: Repositorio/Directory.Build.Props
+      run: dotnet build -c Release
+    
+    - name: Generate Nuget package
+      run: dotnet pack --no-build -c Release -o .
+      
+    - name: Push to Nuget
+      run: dotnet nuget push *.nupkg
+      
+      #with:
+      #  PROJECT_FILE_PATH: Repositorio/Repositorio.csproj
+      #  NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+      #  VERSION_FILE_PATH: Repositorio/Directory.Build.Props
