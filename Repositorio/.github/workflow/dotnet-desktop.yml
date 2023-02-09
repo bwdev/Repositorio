@@ -16,15 +16,13 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 6.0.0
+        dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore --configuration Release
       
-    - name: Publish Repositorio
-      uses: brandedoutcast/publish-nuget@v2.5.2
-      with:
-        PROJECT_FILE_PATH: Repositorio/Repositorio.csproj
-        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-        VERSION_FILE_PATH: Repositorio/Directory.Build.Props
+    - name: Push to Nuget
+      run: dotnet nuget push **/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
+      env:
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
