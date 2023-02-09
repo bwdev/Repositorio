@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+    <None Include=".github\workflow\nuget.yml" />
+    <None Include=".github\workflow\publish_app_services.yml" />
+    <None Include=".github\workflow\publish_core.yml" />
+    <None Include=".github\workflow\publish_infrastructure.yml" />
+    <None Include=".github\workflow\release.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.13" />
+  </ItemGroup>
+
+</Project>
