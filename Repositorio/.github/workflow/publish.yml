@@ -1,4 +1,4 @@
-name: Publish Repositorio.Core
+﻿name: Publish Repositorio
 
 on:
   push:
@@ -16,14 +16,15 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '6.0.x'
+        dotnet-version: 6.0.0
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore --configuration Release
-    - name: Publish Core
+      
+    - name: Publish Repositorio
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:
-        PROJECT_FILE_PATH: Repositorio.Core/Repositorio.Core.csproj
+        PROJECT_FILE_PATH: Repositorio/Repositorio.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-        VERSION_FILE_PATH: Repositorio.Core/Directory.Build.Props
+        VERSION_FILE_PATH: Repositorio/Directory.Build.Props
