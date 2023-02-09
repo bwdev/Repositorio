@@ -16,7 +16,11 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
+<<<<<<< HEAD:.github/workflows/publish.yml
         dotnet-version: 6.0.0
+=======
+        dotnet-version: '6.0.x'
+>>>>>>> f170f1f9d43b6d75701458bf87306fa6c9b23d8c:.github/workflows/publish_core.yml
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
