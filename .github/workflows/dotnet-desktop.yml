@@ -29,7 +29,9 @@ jobs:
       run: dotnet pack --no-build -c Release -o .
       
     - name: Push to Nuget
-      run: dotnet nuget push *.nupkg
+      run: dotnet nuget push */bin/Release/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
+      env:
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
       
       #with:
       #  PROJECT_FILE_PATH: Repositorio/Repositorio.csproj
